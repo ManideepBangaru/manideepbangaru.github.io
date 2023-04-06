@@ -14,6 +14,10 @@ nav{
     align-items: center;
 }
 
+nav .nav-menu-button{
+    display: none;
+}
+
 .myspace{
     flex: 1;
     font-family: "Alkatra", "cursive";
@@ -54,4 +58,21 @@ nav .nav-items{
 
 .nav-link:hover{
     color: brown;
+}
+
+@media screen and (max-width:770px){
+    nav .nav-items{
+        display: none;
+    }
+
+    nav .nav-menu-button{
+        display: block;
+        margin: 0;
+    }
+
+    nav .nav-menu-button i{
+        background-color: transparent;
+        color:black;
+        font-size: 30px;
+    }
 }
