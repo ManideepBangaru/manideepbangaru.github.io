@@ -60,6 +60,7 @@ nav{
     text-decoration: none;
     font-family: "Alkatra";
     padding: 10%;
+    margin: 5%;
 }
 
 .main-menu li{
@@ -68,6 +69,7 @@ nav{
 
 .main-menu a:hover{
     background: #e66465;
+    color: black;
     transition-duration: 0.5s;
 }
 
