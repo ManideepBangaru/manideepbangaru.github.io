@@ -19,6 +19,7 @@ nav{
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: black;
 }
 
 .logo{
@@ -34,6 +35,7 @@ nav{
     color: white;
     font-family: "Alkatra";
     font-size: 30px;
+    max-width: fit-content;
     margin: 2%;
 }
 
@@ -42,7 +44,10 @@ nav{
 }
 
 .main-menu{
-    flex: 2;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main-menu a{
@@ -50,21 +55,21 @@ nav{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: white;
     text-decoration: none;
     font-family: "Alkatra";
+    padding: 10%;
 }
 
 .main-menu li{
     list-style-type: none;
 }
 
-
 .main-menu a:hover{
     background: #e66465;
     transition-duration: 0.5s;
 }
-
 
 .main-menu ul{
     list-style-type: none;
