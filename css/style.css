@@ -44,10 +44,11 @@ nav{
 }
 
 .main-menu{
-    flex: 1;
+    flex: 2;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
 .main-menu a{
@@ -60,11 +61,12 @@ nav{
     text-decoration: none;
     font-family: "Alkatra";
     padding: 10%;
-    margin: 5%;
+    margin: 0;
 }
 
 .main-menu li{
     list-style-type: none;
+
 }
 
 .main-menu a:hover{
@@ -89,6 +91,7 @@ nav{
 .main-menu li:hover .dropdown-1 > ul li{
     display: block;
     background: black;
+    transition-duration: 10s;
 }
 
 .dropdown-1 ul li{
@@ -99,6 +102,8 @@ nav{
 .dropdown-1 ul{
     position: absolute;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     width: 100%;
+    transition-duration: 1s;
 }
