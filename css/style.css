@@ -2,13 +2,27 @@
     box-sizing: border-box;
 }
 
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
 body{
+<<<<<<< HEAD
+=======
+    background: linear-gradient(90deg , #e66465 0%, #9198e5 100%);
+    background-position: center;
+    background-size: cover;
+    height: fit-content;
+>>>>>>> 5c150dafba1521ee7d21b74040b8f0251f7ae149
     margin: 0;
     padding: 0;
 }
 
 .nav-bar{
     display: flex;
+<<<<<<< HEAD
     justify-content: space-between;
     align-items: center;
     background-color: black;
@@ -95,3 +109,95 @@ body{
         display: flex;
     }
 }
+=======
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+}
+
+.logo{
+    flex: 1;
+}
+
+.logo a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-decoration: none;
+    color: white;
+    font-family: "Alkatra";
+    font-size: 30px;
+    max-width: fit-content;
+    margin: 2%;
+}
+
+.logo a:hover{
+    color:#9198e5;
+}
+
+.main-menu{
+    flex: 2;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.main-menu a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-family: "Alkatra";
+    padding: 10%;
+    margin: 0;
+}
+
+.main-menu li{
+    list-style-type: none;
+
+}
+
+.main-menu a:hover{
+    background: #e66465;
+    color: black;
+    transition-duration: 0.5s;
+}
+
+.main-menu ul{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu ul li{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.main-menu li:hover .dropdown-1 > ul li{
+    display: block;
+    background: black;
+    transition-duration: 10s;
+}
+
+.dropdown-1 ul li{
+    display: none;
+    position: relative;
+}
+
+.dropdown-1 ul{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    transition-duration: 1s;
+}
+>>>>>>> 5c150dafba1521ee7d21b74040b8f0251f7ae149
