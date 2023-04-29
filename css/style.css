@@ -1,78 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+*{
+    box-sizing: border-box;
+}
 
 body{
-    background: linear-gradient(90deg , #e66465 0%, #9198e5 100%);
-    background-position: center;
-    background-size: cover;
-    height: fit-content;
+    margin: 0;
+    padding: 0;
 }
 
-nav{
+.nav-bar{
     display: flex;
-    flex-direction:row;
-    height: 10vh;
+    justify-content: space-between;
     align-items: center;
+    background-color: black;
+    color: white;
 }
 
-nav .nav-menu-button{
-    display: none;
-}
-
-.myspace{
-    flex: 1;
-    font-family: "Alkatra", "cursive";
-    font-weight: 300;
-    font-size: 30px;
-    text-align: left;
-    padding : 2%;
-}
-
-.myspace-link{
+.brand-name{
+    font-size: 1.5rem;
+    margin: .5rem;
+    color:white;
     text-decoration: none;
-    color:black;
-    text-align: left;
 }
 
-.myspace:hover{
-    cursor: pointer;
-}
-
-nav .nav-items{
-    flex: 2;
+.nav-bar-links ul{
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content:space-between;
+}
+
+.nav-bar-links li{
     list-style-type: none;
-    height: 10vh;
-    padding: 0% 5%;
-    margin: 10;
-    align-items: center;
 }
 
-.nav-link{
-    font-family: "Alkatra";
-    font-size: 20px;
-    font-weight: 300;
+.nav-bar-links li a{
     text-decoration: none;
-    color:black;
+    color: white;
+    padding: 1.5rem;
+    display: block;
+    font-size: 1.2rem;
 }
 
-.nav-link:hover{
-    color: brown;
+.nav-bar-links li:hover{
+    background-color: grey;
+    transition-duration: 0.5s;
 }
 
-@media screen and (max-width:770px){
-    nav .nav-items{
+.toggle-button{
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar{
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 650px) {
+    .toggle-button{
+        display: flex;
+    }
+
+    .nav-bar-links{
         display: none;
+        width: 100%;
     }
 
-    nav .nav-menu-button{
-        display: block;
-        margin: 0;
+    .nav-bar{
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    nav .nav-menu-button i{
-        background-color: transparent;
-        color:black;
-        font-size: 30px;
+    .nav-bar-links ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-bar-links li{
+        text-align: center;
+    }
+
+    .nav-bar-links li a{
+        padding: .5rem 1rem;
+    }
+
+    .nav-bar-links.active{
+        display: flex;
     }
 }
