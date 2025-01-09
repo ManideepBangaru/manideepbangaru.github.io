@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="./portfolio-website/src/css/styles.css">
+    <title>Manideep Bangaru's Data Science Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
         <nav>
-            <ul style="list-style: none; display: flex; justify-content: space-around; padding: 0;">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="./portfolio-website/src/about.html">About Me</a></li>
-            <li><a href="./portfolio-website/src/blog.html">Blog</a></li>
-            <li><a href="./portfolio-website/src/contact.html">Contact</a></li>
-            <li><a href="./portfolio-website/src/library.html">My Library</a></li>
+            <div class="logo">Manideep Bangaru</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./portfolio-website/src/about.html">About Me</a></li>
+                <li><a href="./portfolio-website/src/blog.html">Blog</a></li>
+                <li><a href="./portfolio-website/src/library.html">Library</a></li>
+                <li><a href="./portfolio-website/src/contact.html">Contact Me</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <h2>Introduction</h2>
-            <p>This is the home page of my portfolio. Here you can find information about me, my work, and my interests.</p>
+
+    <main id="homepage">
+        <section class="hero">
+            <h1>Welcome to My Data Science Journey</h1>
+            <p>Insights, learning, and innovation in the world of Data Science.</p>
+            <a href="about.html" class="cta">Learn More About Me</a>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 My Portfolio</p>
+        <p>&copy; 2025 Manideep Bangaru. Built with passion for Data Science.</p>
+        <div class="social-links">
+            <a href="https://github.com/manideepbangaru" target="_blank">GitHub</a>
+            <a href="#">LinkedIn</a>
+        </div>
     </footer>
-    <script src="./portfolio-website/src/js/scripts.js"></script>
 </body>
 </html>
