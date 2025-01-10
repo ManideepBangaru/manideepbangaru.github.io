@@ -1,6 +1,7 @@
 /* General Styles */
 /* load fonts */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .logo {
     font-family: "Dancing Script";
@@ -37,9 +38,9 @@ nav {
 }
 
 .nav-links {
-    font-family: "Dancing Script";
+    font-family: "Roboto";
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     list-style: none;
     display: flex;
     gap: 1.5rem;
@@ -99,4 +100,27 @@ nav {
 .social-links img{
     height: 24px;
     width: 24px;
+}
+
+/* write media queryies to decrease the font-size when the window goes under a pixel value */
+@media screen and (max-width: 600px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    .nav-links {
+        font-size: 0.8rem;
+    }
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .copyright {
+        font-size: 12px;
+    }
+    .social-links img{
+        height: 18px;
+        width: 18px;
+    }
 }
