@@ -22,55 +22,27 @@
             <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
-
         <nav class="main-nav">
             <a href="about.html">About Me</a>
             <a href="blog.html">Blog</a>
             <a href="library.html">My Library</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
     <main class="content">
-        <div class="quote-section">
-            <blockquote>
-                "In the realm of data science, every dataset tells a story waiting to be discovered."
-                <span class="quote-author">- Manideep Bangaru</span>
-            </blockquote>
-        </div>
-
-        <div class="gif-container">
-            <div class="data-animation">
-                <!-- Neural Network Animation -->
-                <div class="neural-network">
-                    <div class="node n1"></div>
-                    <div class="node n2"></div>
-                    <div class="node n3"></div>
-                    <div class="node n4"></div>
-                    <div class="node n5"></div>
-                    <div class="connection c1"></div>
-                    <div class="connection c2"></div>
-                    <div class="connection c3"></div>
-                    <div class="data-particle"></div>
-                </div>
-                
-                <!-- Binary Rain Effect -->
-                <div class="binary-rain">
-                    <span>1</span><span>0</span><span>1</span>
-                    <span>0</span><span>1</span><span>0</span>
-                    <span>1</span><span>0</span><span>1</span>
-                </div>
-
-                <!-- Circular Analytics Icon -->
-                <div class="analytics-circle">
-                    <div class="circle"></div>
-                    <div class="pulse"></div>
-                </div>
-            </div>
-        </div>
+        <!-- Empty content area -->
     </main>
+
+    <canvas id="particles-bg"></canvas>
 
     <footer>
         <p>© 2025 Manideep Bangaru. All rights reserved.</p>
     </footer>
+    
+    <script src="js/theme.js"></script>
+    <script src="js/particles.js"></script>
 </body>
 </html>
