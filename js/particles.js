@@ -6,6 +6,7 @@ class ParticleNetwork {
         this.numberOfParticles = 100;
         this.mouse = { x: 0, y: 0 };
         
+        this.setParticleCount();
         this.init();
         this.animate();
         this.handleResize();
@@ -82,8 +83,20 @@ class ParticleNetwork {
         }
     }
 
+    setParticleCount() {
+        const width = window.innerWidth;
+        if (width <= 480) {
+            this.numberOfParticles = 30;  // Much fewer particles for mobile
+        } else if (width <= 768) {
+            this.numberOfParticles = 50;  // Fewer particles for tablets
+        } else {
+            this.numberOfParticles = 100; // Original amount for desktop
+        }
+    }
+
     handleResize() {
         window.addEventListener('resize', () => {
+            this.setParticleCount();
             this.setCanvasSize();
             this.createParticles();
         });
