@@ -454,13 +454,13 @@ body {
     }
 
     footer p {
-        font-size: 0.8rem;  /* Smaller text */
+        font-size: 0.6rem;  /* Smaller text */
     }
 }
 
 @media (max-width: 480px) {
     footer {
-        padding: 0.75rem;  /* Even smaller padding for mobile */
+        padding: 0.5rem;  /* Even smaller padding for mobile */
     }
 
     footer p {
