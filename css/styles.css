@@ -450,7 +450,7 @@ body {
 /* Update Footer Styles for mobile */
 @media (max-width: 768px) {
     footer {
-        padding: 1rem;  /* Reduced padding */
+        padding: 0.75rem;  /* Reduced padding */
     }
 
     footer p {
