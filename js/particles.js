@@ -30,10 +30,10 @@ class ParticleNetwork {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                radius: Math.random() * 3 + 2,
+                radius: Math.random() * 2 + 1,
                 vx: (Math.random() - 0.5) * 0.8,
                 vy: (Math.random() - 0.5) * 0.8,
-                originalRadius: Math.random() * 3 + 2
+                originalRadius: Math.random() * 2 + 1
             });
         }
     }
@@ -65,7 +65,7 @@ class ParticleNetwork {
                     this.ctx.strokeStyle = isDarkTheme 
                         ? `rgba(6, 182, 212, ${0.4 * (1 - dist/150)})` // Increased line opacity
                         : `rgba(2, 132, 199, ${0.4 * (1 - dist/150)})`;
-                    this.ctx.lineWidth = 1.5; // Increased line width
+                    this.ctx.lineWidth = 1.0; // Increased line width
                     this.ctx.moveTo(p.x, p.y);
                     this.ctx.lineTo(p2.x, p2.y);
                     this.ctx.stroke();
