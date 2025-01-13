@@ -86,11 +86,11 @@ class ParticleNetwork {
     setParticleCount() {
         const width = window.innerWidth;
         if (width <= 480) {
-            this.numberOfParticles = 15;  // Even fewer particles for mobile
+            this.numberOfParticles = 10;  // Even fewer particles for mobile
         } else if (width <= 768) {
-            this.numberOfParticles = 25;  // Reduced particles for tablets
+            this.numberOfParticles = 30;  // Fewer particles for tablets
         } else {
-            this.numberOfParticles = 50;  // Reduced particles for desktop
+            this.numberOfParticles = 100; // Original amount for desktop
         }
     }
 
