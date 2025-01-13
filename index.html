@@ -1,39 +1,76 @@
+<!-- Lets build my personal website -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manideep Bangaru</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Gaming Portfolio</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo"><a href="index.html">Manideep Bangaru</a></div>
-            <div class="social-links">
-                <a href="https://github.com/manideepbangaru" target="_blank"><img src="assets/github-mark.svg"></a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="aboutme.html">About Me</a></li>
-                <li><a href="blog.html">My Blogs</a></li>
-                <li><a href="library.html">My Library</a></li>
-                <!-- <li>
-                    <button id="theme-toggle">Toggle Theme</button>
-                  </li> -->
-            </ul>
+    <header class="main-header">
+        <div class="logo">
+            <h2>Manideep Bangaru</h2>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <nav class="main-nav">
+            <a href="about.html">About Me</a>
+            <a href="blog.html">Blog</a>
+            <a href="library.html">My Library</a>
         </nav>
     </header>
 
-    <main id="homepage">
-        <section class="hero">
-            <h1>Welcome to My Data Science Journey</h1>
-            <p>Insights, learning, and innovation in the world of Data Science.</p>
-        </section>
+    <main class="content">
+        <div class="quote-section">
+            <blockquote>
+                "In the realm of data science, every dataset tells a story waiting to be discovered."
+                <span class="quote-author">- Manideep Bangaru</span>
+            </blockquote>
+        </div>
+
+        <div class="gif-container">
+            <div class="data-animation">
+                <!-- Neural Network Animation -->
+                <div class="neural-network">
+                    <div class="node n1"></div>
+                    <div class="node n2"></div>
+                    <div class="node n3"></div>
+                    <div class="node n4"></div>
+                    <div class="node n5"></div>
+                    <div class="connection c1"></div>
+                    <div class="connection c2"></div>
+                    <div class="connection c3"></div>
+                    <div class="data-particle"></div>
+                </div>
+                
+                <!-- Binary Rain Effect -->
+                <div class="binary-rain">
+                    <span>1</span><span>0</span><span>1</span>
+                    <span>0</span><span>1</span><span>0</span>
+                    <span>1</span><span>0</span><span>1</span>
+                </div>
+
+                <!-- Circular Analytics Icon -->
+                <div class="analytics-circle">
+                    <div class="circle"></div>
+                    <div class="pulse"></div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer class="footer">
-        <p class="copyright">&copy; 2025 - &#x1F917; Manideep Bangaru &#x1F917;</p>
+    <footer>
+        <p>© 2025 Manideep Bangaru. All rights reserved.</p>
     </footer>
-    <script src="js/script.js"></script>
 </body>
 </html>
