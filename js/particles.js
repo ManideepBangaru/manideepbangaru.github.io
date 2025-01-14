@@ -86,7 +86,7 @@ class ParticleNetwork {
     setParticleCount() {
         const width = window.innerWidth;
         if (width <= 480) {
-            this.numberOfParticles = 10;  // Even fewer particles for mobile
+            this.numberOfParticles = 15;  // Even fewer particles for mobile
         } else if (width <= 768) {
             this.numberOfParticles = 40;  // Fewer particles for tablets
         } else {
