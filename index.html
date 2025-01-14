@@ -1,11 +1,9 @@
-<!-- Lets build my personal website -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manideep Bangaru</title>
+    <title>About Me - Manideep Bangaru</title>
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -13,16 +11,13 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="logo">
-            <a href="index.html"><h2>Manideep Bangaru</h2></a>
-        </div>
-        
         <div class="social-links">
             <a href="https://github.com/ManideepBangaru" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/manideepbangaru/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
+        
         <nav class="main-nav">
-            <a href="about.html">About Me</a>
+            <a href="index.html" class="active">About Me</a>
             <a href="blog.html">Blog</a>
             <a href="library.html">My Library</a>
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -32,7 +27,194 @@
     </header>
 
     <main class="content">
-        <!-- Empty content area -->
+        <div class="about-container">
+            <!-- Enhanced Profile Section -->
+            <section class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-image-container">
+                        <div class="profile-image">
+                            <img src="assets/profile.jpg" alt="Manideep Bangaru">
+                        </div>
+                        <div class="profile-social">
+                            <a href="https://github.com/ManideepBangaru" target="_blank" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/manideepbangaru" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:bmd994@gmail.com" class="social-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="profile-intro">
+                        <div class="typing-container">
+                            <h1>Hi, I'm Manideep Bangaru</h1>
+                        </div>
+                        <div class="role-container">
+                            <h2>I'm a</h2>
+                            <div class="roles">
+                                <span>AI Practitioner</span>
+                                <span>Data Scientist</span>
+                                <span>AI Strategist</span>
+                            </div>
+                        </div>
+                        <p class="tagline">Living the AI Dream</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive About Section -->
+            <section class="about-section">
+                <h2 class="section-title">
+                    <span class="title-icon">👨‍💻</span>
+                    About Me
+                </h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>With over 9 years of experience as a Data Science Practitioner, I specialize in developing and implementing advanced Generative AI solutions, deep learning models, and traditional machine learning algorithms. My expertise encompasses statistical analysis, business intelligence, and data analytics, enabling me to extract actionable insights from complex datasets. I have a proven track record of delivering data-driven strategies that enhance business performance and drive innovation across various industries.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack Section -->
+            <section class="tech-stack-section">
+                <h2 class="section-title">
+                    <span class="title-icon">⚡</span>
+                    Tech Stack
+                </h2>
+                
+                <div class="tech-categories">
+                    <!-- Languages -->
+                    <div class="tech-category">
+                        <h3>Programming Languages</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon" data-tooltip="Python">
+                                <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg" alt="Python">
+                            </div>
+                            <div class="tech-icon" data-tooltip="SQL">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <!-- Add more language icons -->
+                        </div>
+                    </div>
+
+                    <!-- Frameworks & Libraries -->
+                    <div class="tech-category">
+                        <h3>Frameworks & Libraries</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon" data-tooltip="TensorFlow">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TensorFlow">
+                            </div>
+                            <div class="tech-icon" data-tooltip="PyTorch">
+                                <img src="https://pytorch.org/assets/images/pytorch-logo.png" alt="PyTorch">
+                            </div>
+                            <!-- Add more framework icons -->
+                        </div>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="tech-category">
+                        <h3>Tools & Platforms</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon" data-tooltip="AWS">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="tech-icon" data-tooltip="Docker">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <!-- Add more tool icons -->
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="tech-category">
+                        <h3>Databases</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon" data-tooltip="MongoDB">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="tech-icon" data-tooltip="PostgreSQL">
+                                <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL">
+                            </div>
+                            <!-- Add more database icons -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enhanced Experience Section -->
+            <section class="experience-section">
+                <h2 class="section-title">
+                    <span class="title-icon">💼</span>
+                    Professional Journey
+                </h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2023 - Present</div>
+                            <h3>Job Title</h3>
+                            <h4>Company Name</h4>
+                            <ul class="achievement-list">
+                                <li>Key achievement or responsibility</li>
+                                <li>Key achievement or responsibility</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Add more timeline items -->
+                </div>
+            </section>
+
+            <!-- Interactive Skills Section -->
+            <section class="skills-section">
+                <h2 class="section-title">
+                    <span class="title-icon">🚀</span>
+                    Skills & Expertise
+                </h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Python</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-line python">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <!-- Add more skill bars -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Showcase -->
+            <!-- <section class="projects-section">
+                <h2 class="section-title">
+                    <span class="title-icon">🎯</span>
+                    Featured Projects
+                </h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="assets/projects/project1.jpg" alt="Project 1">
+                        </div>
+                        <div class="project-info">
+                            <h3>Project Name</h3>
+                            <p>Project description...</p>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- Add more project cards -->
+                <!-- </div>
+            </section> -->
+        </div>
     </main>
 
     <canvas id="particles-bg"></canvas>
@@ -43,5 +225,11 @@
     
     <script src="js/theme.js"></script>
     <script src="js/particles.js"></script>
+    <!-- Add AOS library for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
-</html>
+</html> 

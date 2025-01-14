@@ -153,7 +153,7 @@ header::after {
     left: 0;
     right: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal sections */
+    grid-template-columns: auto 1fr; /* Two columns: social links and nav */
     align-items: center;
     padding: 1rem 2rem;
     background: var(--header-bg);
@@ -165,19 +165,17 @@ header::after {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Left section - Name */
-.logo {
-    justify-self: start;
+/* Left section - Social Links */
+.social-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.logo h2 {
-    color: var(--light);
-    font-family: 'Orbitron', sans-serif;
-    margin: 0;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    animation: none;
-    font-weight: 600;
+/* Remove the logo styles since we're not using them anymore */
+.logo {
+    display: none;
 }
 
 /* Middle section - Social Links */
@@ -190,7 +188,7 @@ header::after {
 
 .social-links a {
     color: var(--light);
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     transition: all 0.2s ease-in-out;
 }
 
@@ -271,22 +269,14 @@ header::after {
 
 @media (max-width: 480px) {
     .main-header {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr; /* Keep two columns on mobile */
         height: auto;
-        gap: 1rem;
         padding: 1rem;
     }
 
-    .logo {
-        justify-self: center;
-    }
-
     .social-links {
-        justify-self: center;
-    }
-
-    .main-nav {
-        justify-self: center;
+        justify-content: flex-start;
+        gap: 1rem;
     }
 }
 
