@@ -7,6 +7,7 @@ class ParticleNetwork {
         this.mouse = { x: 0, y: 0 };
         
         this.setParticleCount();
+        this.setCanvasSize();
         this.init();
         this.animate();
         this.handleResize();
@@ -19,10 +20,8 @@ class ParticleNetwork {
     }
 
     setCanvasSize() {
-        const content = document.querySelector('.content');
-        const rect = content.getBoundingClientRect();
-        this.canvas.width = rect.width;
-        this.canvas.height = rect.height;
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight - 120;
     }
 
     createParticles() {
