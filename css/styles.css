@@ -511,6 +511,7 @@ body {
     color: var(--accent);
     letter-spacing: 2px;
     text-transform: uppercase;
+    text-shadow: none;
 }
 
 /* Section Styles */
