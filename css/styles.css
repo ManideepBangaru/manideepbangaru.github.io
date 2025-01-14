@@ -284,7 +284,7 @@ header::after {
 /* Footer Styles */
 footer {
     text-align: center;
-    padding: 2rem;
+    padding: 1.25rem;
     background: var(--footer-bg);
     border-top: var(--modern-border);
     transition: none;
@@ -413,6 +413,7 @@ body {
 .logo a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
 .logo a:hover {
