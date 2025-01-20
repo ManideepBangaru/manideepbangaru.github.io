@@ -1,3 +1,6 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+
 /* Modern theme color palette */
 :root {
     /* Dark theme (default) */
@@ -1200,4 +1203,34 @@ section h2 {
     align-items: center; 
     justify-content: center; 
     min-height: calc(100vh - 120px);
+}
+
+/* Timeline Typography Styles */
+.timeline-content {
+    font-family: 'Inter', sans-serif;
+}
+
+.timeline-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-company {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.timeline-date {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    color: #2563eb;
+    margin-bottom: 0.75rem;
+}
+
+.achievement-list {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
 }
