@@ -1248,7 +1248,8 @@ section h2 {
 
 .search-section {
     margin: 2rem auto;
-    max-width: 1000px; /* Increased to accommodate both elements */
+    margin-top: 3rem;
+    max-width: 1000px;
     padding: 0 1rem;
     position: relative;
 }
@@ -1270,8 +1271,8 @@ section h2 {
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 2; /* Takes up more space than category filter */
 }
 
 /* Updated category filter to be inline */
@@ -1299,8 +1300,8 @@ section h2 {
     background-position: right 1rem center;
     background-size: 1.2em;
     padding-right: 3rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Match search bar height */
 }
 
 .category-filter select:hover,
@@ -1308,6 +1309,30 @@ section h2 {
     border-color: var(--accent-color);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),
                 0 0 0 2px rgba(var(--accent-color-rgb), 0.2);
+}
+
+/* Custom scrollbar for dropdown */
+.category-filter select::-webkit-scrollbar {
+    width: 8px;
+}
+
+.category-filter select::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    border-radius: 10px;
+}
+
+.category-filter select::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+.category-filter select::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Enhanced focus states for accessibility */
+.category-filter select:focus {
+    outline: none;
 }
 
 /* Responsive adjustments */
@@ -1387,6 +1412,11 @@ section h2 {
     border: 2px solid var(--border-color);
     max-height: 300px;
     overflow-y: auto;
+    display: none; /* Hide by default */
+}
+
+.search-suggestions.empty {
+    border: none; /* Remove border when empty */
 }
 
 .suggestion {
@@ -1432,9 +1462,11 @@ section h2 {
 }
 
 .blog-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
 }
 
 .blog-card {
@@ -1512,7 +1544,8 @@ section h2 {
     flex-direction: column;
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    margin-top: 5rem;
 }
 
 @media (max-width: 768px) {
