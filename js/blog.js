@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchSuggestions = document.getElementById('search-suggestions');
     const categorySelect = document.getElementById('category-select');
     const blogList = document.getElementById('blog-list');
-    const categoryFilter = document.getElementById('dropdown-options');
-    const selectedCategory = document.getElementById('selected-category');
     
     let blogPosts = {};
     let categories = {};
@@ -26,19 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 option.value = category;
                 option.textContent = category;
                 categorySelect.appendChild(option);
-            });
-
-            // Populate categories dynamically
-            Object.keys(categories).forEach(category => {
-                const li = document.createElement('li');
-                li.textContent = category;
-                li.dataset.value = category;
-                li.addEventListener('click', function() {
-                    selectedCategory.textContent = this.dataset.value;
-                    categoryFilter.style.display = 'none'; // Hide dropdown after selection
-                    filterBlogs(); // Call filter function if needed
-                });
-                categoryFilter.appendChild(li);
             });
 
             // Initial display of all blogs
@@ -80,21 +65,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 div.addEventListener('click', () => {
                     searchInput.value = suggestion;
                     searchSuggestions.innerHTML = '';
+                    searchSuggestions.style.display = 'none';
+                    searchSuggestions.classList.add('empty');
                     filterBlogs();
                 });
                 searchSuggestions.appendChild(div);
             });
-            searchSuggestions.classList.remove('empty'); // Remove empty class if there are suggestions
+            searchSuggestions.style.display = 'block';
+            searchSuggestions.classList.remove('empty');
         } else {
             searchSuggestions.style.display = 'none';
-            searchSuggestions.classList.add('empty'); // Add empty class if no suggestions
+            searchSuggestions.classList.add('empty');
         }
 
-        // Show suggestions if there are any
-        if (suggestions.length > 0) {
-            searchSuggestions.style.display = 'block';
-        } else {
+        // Show all blogs if search term is empty
+        if (searchTerm.length === 0) {
             searchSuggestions.style.display = 'none';
+            searchSuggestions.classList.add('empty');
+            displayBlogs(Object.entries(blogPosts));
         }
     });
 
