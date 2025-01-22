@@ -1,0 +1,15 @@
+{
+    "Julia": [
+        "https://github.com/ManideepBangaru/Julia-Journey/blob/main/notebooks/00_Introduction.ipynb"
+    ],
+    "Data Science": [
+        "assets/blogs/data-science-basics.md"
+    ],
+    "Machine Learning": [
+        "https://github.com/YourUsername/YourRepo/blob/main/notebooks/scikit_learn_basics.ipynb",
+        "https://github.com/YourUsername/YourRepo/blob/main/notebooks/deep_learning_intro.ipynb"
+    ],
+    "Deep Learning": [
+        "https://github.com/YourUsername/YourRepo/blob/main/notebooks/deep_learning_intro.ipynb"
+    ]
+}
