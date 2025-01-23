@@ -1,4 +1,12 @@
 {
-    "Python-Introduction":"https://github.com/ManideepBangaru/Python-Journey/blob/master/PyCodes/1_MyFirstPythonProgram.py",
-    "Julia-Introduction": "https://github.com/ManideepBangaru/Julia-Journey/blob/main/notebooks/00_Introduction.ipynb"
+    "Python-Introduction":{
+        "path" : "https://github.com/ManideepBangaru/Python-Journey/blob/master/PyCodes/1_MyFirstPythonProgram.py",
+        "summary" : "This is a brief summary of Python Introduction",
+        "category" : "python"
+    },
+    "Julia-Introduction": {
+        "path": "https://github.com/ManideepBangaru/Julia-Journey/blob/main/notebooks/00_Introduction.ipynb",
+        "summary": "This is a brief summary of Julia Introduction",
+        "category" : "julia"
+    }
 } 
