@@ -50,11 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Search functionality with suggestions
     searchInput.addEventListener('input', function(e) {
         const searchTerm = e.target.value.toLowerCase().trim();
+        
+        // Filter blog posts based on search term
+        filterBlogs();
+
+        // Show suggestions
         const suggestions = Object.keys(blogPosts).filter(title => 
             title.toLowerCase().includes(searchTerm)
         );
 
-        // Show suggestions
         searchSuggestions.innerHTML = '';
         if (searchTerm.length > 0 && suggestions.length > 0) {
             suggestions.forEach(suggestion => {
@@ -75,13 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             searchSuggestions.style.display = 'none';
             searchSuggestions.classList.add('empty');
-        }
-
-        // Show all blogs if search term is empty
-        if (searchTerm.length === 0) {
-            searchSuggestions.style.display = 'none';
-            searchSuggestions.classList.add('empty');
-            displayBlogs(Object.entries(blogPosts));
         }
     });
 
