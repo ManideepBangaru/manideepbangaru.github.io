@@ -1213,6 +1213,7 @@ section h2 {
 /* Timeline Typography Styles */
 .timeline-content {
     font-family: 'Inter', sans-serif;
+    margin-bottom: 20px; /* Add space between timeline content blocks */
 }
 
 .timeline-title {
@@ -1233,6 +1234,7 @@ section h2 {
     font-weight: 500;
     color: #2563eb;
     margin-bottom: 0.75rem;
+    margin-top: 60px;
 }
 
 .achievement-list {
