@@ -105,7 +105,12 @@ document.addEventListener('DOMContentLoaded', function() {
         displayBlogs(filteredPosts);
     }
 
-    function displayBlogs(posts) {
+    // Add marked.js for markdown parsing
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+    document.head.appendChild(script);
+
+    async function displayBlogs(posts) {
         blogList.innerHTML = '';
         posts.forEach(([title, post]) => {
             const blogCard = document.createElement('div');
@@ -116,13 +121,60 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="category">${post.category}</div>
             `;
             
-            // Add click handler to open the notebook
-            blogCard.addEventListener('click', () => {
-                window.open(getNotebookViewerUrl(post.path), '_blank');
+            // Add click handler
+            blogCard.addEventListener('click', async () => {
+                if (post.path.endsWith('.md')) {
+                    await displayMarkdownContent(post.path, title);
+                } else {
+                    window.open(getNotebookViewerUrl(post.path), '_blank');
+                }
             });
             
             blogList.appendChild(blogCard);
         });
+    }
+
+    async function displayMarkdownContent(path, title) {
+        try {
+            const response = await fetch(path);
+            const markdown = await response.text();
+            
+            // Create back button
+            const buttonWrapper = document.createElement('div');
+            buttonWrapper.className = 'back-button-wrapper';
+
+            const backButton = document.createElement('button');
+            backButton.className = 'back-button';
+            backButton.innerHTML = '<i class="fas fa-arrow-left"></i> Back to Blogs';
+            backButton.onclick = () => {
+                filterBlogs();
+            };
+
+            buttonWrapper.appendChild(backButton);
+            
+            // Create markdown container
+            const markdownContainer = document.createElement('div');
+            markdownContainer.className = 'markdown-content';
+            
+            // Set the content
+            blogList.innerHTML = '';
+            blogList.appendChild(buttonWrapper);
+            blogList.appendChild(markdownContainer);
+            
+            // Parse and render markdown
+            markdownContainer.innerHTML = marked.parse(markdown);
+            
+            // Add syntax highlighting if you want to support code blocks
+            if (window.hljs) {
+                document.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightBlock(block);
+                });
+            }
+            
+        } catch (error) {
+            console.error('Error loading markdown:', error);
+            blogList.innerHTML = `<div class="error">Error loading content</div>`;
+        }
     }
 
     // Initial load

@@ -8,5 +8,10 @@
         "path": "https://github.com/ManideepBangaru/Julia-Journey/blob/main/notebooks/00_Introduction.ipynb",
         "summary": "This is a brief summary of Julia Introduction",
         "category" : "julia"
+    },
+    "Python-Markdown": {
+        "path": "/assets/blogs/python/2025-01-27-About-Python.md",
+        "summary": " Markdown This is a brief summary of Python Introduction",
+        "category" : "python"
     }
 } 
