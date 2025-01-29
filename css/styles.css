@@ -4,37 +4,42 @@
 /* Modern theme color palette */
 :root {
     /* Dark theme (default) */
-    --primary: #06b6d4;    /* Cyan */
-    --secondary: #0ea5e9;  /* Sky blue */
-    --accent: #38bdf8;     /* Lighter sky blue */
-    --dark: #0f172a;       /* Slate 900 */
-    --darker: #020617;     /* Slate 950 */
-    --light: #f8fafc;      /* Slate 50 */
+    --primary: #ffffff;    /* White */
+    --secondary: #ffffff;  /* White */
+    --accent: #ffffff;     /* White */
+    --dark: #000000;      /* Black */
+    --darker: #000000;    /* Black */
+    --light: #ffffff;     /* White */
     --text: var(--light);
     --bg: var(--dark);
-    --header-bg: rgba(15, 23, 42, 0.95);  /* More opaque header */
-    --content-bg: transparent;             /* Transparent content */
-    --footer-bg: rgba(15, 23, 42, 0.95);  /* More opaque footer */
-    --accent-color-hover: #0056b3; /* Darker shade of your accent color */
-    --hover-color: rgba(var(--accent-color-rgb), 0.1);
-    --accent-color: #007bff;
-    --border-color: rgba(0, 0, 0, 0.1);
-    --accent-color-rgb: 0, 123, 255; /* Same as your accent color but in RGB format */
+    --header-bg: rgba(0, 0, 0, 0.95);
+    --content-bg: transparent;
+    --footer-bg: rgba(0, 0, 0, 0.95);
+    --accent-color-hover: #ffffff;
+    --hover-color: rgba(255, 255, 255, 0.1);
+    --accent-color: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-color-rgb: 255, 255, 255;
 }
 
 /* Light theme variables */
 [data-theme="light"] {
-    --primary: #0284c7;    /* Sky 700 */
-    --secondary: #0369a1;  /* Sky 800 */
-    --accent: #0c4a6e;     /* Sky 900 */
-    --dark: #f8fafc;       /* Slate 50 */
-    --darker: #ffffff;
-    --light: #0f172a;      /* Slate 900 */
+    --primary: #000000;    /* Black */
+    --secondary: #000000;  /* Black */
+    --accent: #000000;     /* Black */
+    --dark: #ffffff;       /* White */
+    --darker: #ffffff;     /* White */
+    --light: #000000;      /* Black */
     --text: var(--light);
-    --bg: #f1f5f9;         /*Slate 100 */
-    --header-bg: rgba(248, 250, 252, 0.95);
+    --bg: #ffffff;         /* White */
+    --header-bg: rgba(255, 255, 255, 0.95);
     --content-bg: transparent;
-    --footer-bg: rgba(248, 250, 252, 0.95);
+    --footer-bg: rgba(255, 255, 255, 0.95);
+    --accent-color-hover: #000000;
+    --hover-color: rgba(0, 0, 0, 0.1);
+    --accent-color: #000000;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --accent-color-rgb: 0, 0, 0;
 }
 
 /* Reset body and html styles */
@@ -462,6 +467,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 3rem;  /* Additional top padding */
     position: relative;
     z-index: 1;
 }
@@ -469,6 +475,7 @@ body {
 /* Profile Section */
 .profile-section {
     text-align: center;
+    margin-top: 80px;  /* Add gap between header and profile section */
     margin-bottom: 4rem;
 }
 
