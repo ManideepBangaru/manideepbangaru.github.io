@@ -45,15 +45,15 @@ class ParticleNetwork {
         for (let i = 0; i < this.particles.length; i++) {
             let p = this.particles[i];
 
-            // Draw particle with increased size and opacity
+            // Draw particle
             this.ctx.beginPath();
             this.ctx.arc(p.x, p.y, p.radius * 1.5, 0, Math.PI * 2);
             this.ctx.fillStyle = isDarkTheme 
-                ? 'rgba(6, 182, 212, 0.8)'   // Increased opacity for dark theme
-                : 'rgba(2, 132, 199, 0.8)';  // Increased opacity for light theme
+                ? 'rgba(255, 255, 255, 0.8)'   // White particles for dark theme
+                : 'rgba(0, 0, 0, 0.8)';        // Black particles for light theme
             this.ctx.fill();
 
-            // Draw connections with increased visibility
+            // Draw connections
             for (let j = i + 1; j < this.particles.length; j++) {
                 let p2 = this.particles[j];
                 let dx = p.x - p2.x;
@@ -63,16 +63,16 @@ class ParticleNetwork {
                 if (dist < 150) {
                     this.ctx.beginPath();
                     this.ctx.strokeStyle = isDarkTheme 
-                        ? `rgba(6, 182, 212, ${0.4 * (1 - dist/150)})` // Increased line opacity
-                        : `rgba(2, 132, 199, ${0.4 * (1 - dist/150)})`;
-                    this.ctx.lineWidth = 1.0; // Increased line width
+                        ? `rgba(255, 255, 255, ${0.4 * (1 - dist/150)})` // White lines for dark theme
+                        : `rgba(0, 0, 0, ${0.4 * (1 - dist/150)})`;      // Black lines for light theme
+                    this.ctx.lineWidth = 1.0;
                     this.ctx.moveTo(p.x, p.y);
                     this.ctx.lineTo(p2.x, p2.y);
                     this.ctx.stroke();
                 }
             }
 
-            // Update position with slightly faster movement
+            // Update position
             p.x += p.vx * 1.2;
             p.y += p.vy * 1.2;
 
