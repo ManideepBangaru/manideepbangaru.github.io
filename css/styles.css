@@ -472,11 +472,38 @@ body {
     z-index: 1;
 }
 
-/* Profile Section */
+/* Profile Section with Glassmorphism */
 .profile-section {
     text-align: center;
-    margin-top: 80px;  /* Add gap between header and profile section */
+    margin-top: 80px;
     margin-bottom: 4rem;
+    background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
+    backdrop-filter: blur(10px);           /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);   /* For Safari */
+    border-radius: 20px;                   /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
+    padding: 2rem;                         /* Add some padding */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* Soft shadow */
+}
+
+/* Adjust for dark mode */
+[data-theme="dark"] .profile-section {
+    background: rgba(0, 0, 0, 0.2);        /* Transparent black background */
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Darker border */
+}
+
+/* Ensure content remains visible */
+.profile-section * {
+    position: relative;                    /* Keep content above the blur */
+    z-index: 1;                           /* Ensure content is above the background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-section {
+        margin: 60px 1rem 3rem;            /* Adjust margins for mobile */
+        padding: 1.5rem;                   /* Reduce padding for mobile */
+    }
 }
 
 .profile-header {
@@ -1680,4 +1707,112 @@ section h2 {
     text-align: center;
     background: var(--card-bg);
     border-radius: 8px;
+}
+
+/* About Section with Glassmorphism */
+.about-section {
+    text-align: left;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
+    backdrop-filter: blur(10px);           /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);   /* For Safari */
+    border-radius: 20px;                   /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
+    padding: 2.5rem;                       /* Generous padding */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* Soft shadow */
+    max-width: 1200px;                     /* Maximum width */
+    position: relative;                    /* For stacking context */
+}
+
+/* Adjust for dark mode */
+[data-theme="dark"] .about-section {
+    background: rgba(0, 0, 0, 0.2);        /* Transparent black background */
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Darker border */
+}
+
+/* Ensure content remains visible */
+.about-section * {
+    position: relative;                    /* Keep content above the blur */
+    z-index: 1;                           /* Ensure content is above the background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-section {
+        margin: 1.5rem;                    /* Adjust margins for mobile */
+        padding: 1.5rem;                   /* Reduce padding for mobile */
+        border-radius: 15px;               /* Slightly smaller radius for mobile */
+    }
+}
+
+/* Tech Stack Section with Glassmorphism */
+.tech-stack-section {
+    text-align: left;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
+    backdrop-filter: blur(10px);           /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);   /* For Safari */
+    border-radius: 20px;                   /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
+    padding: 2.5rem;                       /* Generous padding */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* Soft shadow */
+    max-width: 1200px;                     /* Maximum width */
+    position: relative;                    /* For stacking context */
+}
+
+/* Adjust for dark mode */
+[data-theme="dark"] .tech-stack-section {
+    background: rgba(0, 0, 0, 0.2);        /* Transparent black background */
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Darker border */
+}
+
+/* Ensure content remains visible */
+.tech-stack-section * {
+    position: relative;                    /* Keep content above the blur */
+    z-index: 1;                           /* Ensure content is above the background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tech-stack-section {
+        margin: 1.5rem;                    /* Adjust margins for mobile */
+        padding: 1.5rem;                   /* Reduce padding for mobile */
+        border-radius: 15px;               /* Slightly smaller radius for mobile */
+    }
+}
+
+/* Experience Section with Glassmorphism */
+.experience-section {
+    text-align: left;
+    margin: 2rem auto;
+    background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
+    backdrop-filter: blur(10px);           /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);   /* For Safari */
+    border-radius: 20px;                   /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
+    padding: 2.5rem;                       /* Generous padding */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* Soft shadow */
+    max-width: 1200px;                     /* Maximum width */
+    position: relative;                    /* For stacking context */
+}
+
+/* Adjust for dark mode */
+[data-theme="dark"] .experience-section {
+    background: rgba(0, 0, 0, 0.2);        /* Transparent black background */
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Darker border */
+}
+
+/* Ensure content remains visible */
+.experience-section * {
+    position: relative;                    /* Keep content above the blur */
+    z-index: 1;                           /* Ensure content is above the background */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .experience-section {
+        margin: 1.5rem;                    /* Adjust margins for mobile */
+        padding: 1.5rem;                   /* Reduce padding for mobile */
+        border-radius: 15px;               /* Slightly smaller radius for mobile */
+    }
 }
