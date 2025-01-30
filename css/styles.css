@@ -501,7 +501,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .profile-section {
-        margin-top: 10px;  /* Even smaller margin for mobile */
+        margin-top: 5px;  /* Even smaller margin for mobile */
         margin-bottom: 2rem;
     }
     
