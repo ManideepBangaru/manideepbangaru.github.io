@@ -1349,9 +1349,9 @@ section h2 {
 
 /* Responsive adjustments for Coming Soon page */
 @media (max-width: 768px) {
-    .coming-soon h2 {
+    /* .coming-soon h2 {
         font-size: 2rem;
-    }
+    } */
     
     .coming-soon p {
         font-size: 1rem;
@@ -1395,39 +1395,6 @@ section h2 {
 .achievement-list {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-}
-
-.blog-container,
-.search-section,
-.search-bar-wrapper,
-.search-bar,
-.category-filter,
-.search-suggestions,
-.blog-list,
-.blog-card,
-.markdown-content,
-.notebook-container,
-.suggestion {
-    /* Remove all these style blocks */
-}
-
-@keyframes slideDown {
-    /* Remove this animation */
-}
-
-@media (max-width: 768px) {
-    .blog-card,
-    .notebook-container iframe {
-        /* Remove these styles */
-    }
-}
-
-[data-theme="dark"] #search-button,
-[data-theme="dark"] .search-bar,
-[data-theme="dark"] .category-filter select,
-[data-theme="dark"] .blog-card,
-[data-theme="dark"] .search-suggestions {
-    /* Remove these styles */
 }
 
 /* About Section with Glassmorphism */
