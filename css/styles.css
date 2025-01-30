@@ -474,16 +474,16 @@ body {
 
 /* Profile Section with Glassmorphism */
 .profile-section {
-    margin-top: 100px;  /* Extra space at the top for header clearance */
+    margin-top: 100px;  /* Reduced from 100px */
     margin-bottom: 3rem;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
-    backdrop-filter: blur(10px);           /* Blur effect */
-    -webkit-backdrop-filter: blur(10px);   /* For Safari */
-    border-radius: 20px;                   /* Rounded corners */
-    border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
-    padding: 2rem;                         /* Add some padding */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* Soft shadow */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 /* Adjust for dark mode */
@@ -501,8 +501,12 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .profile-section {
-        margin-top: 80px;
+        margin-top: 10px;  /* Even smaller margin for mobile */
         margin-bottom: 2rem;
+    }
+    
+    .about-container {
+        padding-top: 1rem;  /* Reduced from 3rem */
     }
 }
 
