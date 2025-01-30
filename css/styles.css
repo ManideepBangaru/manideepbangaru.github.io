@@ -706,26 +706,32 @@ section h2 {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+    /* Remove the center line */
     .timeline::after {
-        left: 31px;
+        display: none;
     }
     
+    /* Adjust timeline items for mobile */
     .timeline-item {
         width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
+        padding: 0 20px;  /* Reduced padding */
+        left: 0 !important;  /* Override the left/right positioning */
     }
     
-    .timeline-item:nth-child(even) {
-        left: 0;
-    }
-    
+    /* Remove the dots */
     .timeline-content::before {
-        left: -37px !important;
+        display: none;
     }
     
+    /* Simplify the timeline content */
     .timeline-content {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Ensure consistent spacing */
+    .timeline {
+        padding: 20px 0;
     }
 }
 
