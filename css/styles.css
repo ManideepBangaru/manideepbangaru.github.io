@@ -472,14 +472,41 @@ body {
     z-index: 1;
 }
 
+/* Common glassmorphism style for all main sections */
+.profile-section,
+.about-section,
+.tech-stack-section,
+.experience-section {
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Keep specific margin for profile section */
+.profile-section {
+    margin-top: 100px;
+}
+
+/* Ensure content remains readable with blur background */
+.section-title,
+.tech-category h3,
+.timeline-title,
+.timeline-company {
+    position: relative;
+    z-index: 1;
+}
+
 /* Profile Section with Glassmorphism */
 .profile-section {
-    margin-top: 100px;  /* Reduced from 100px */
+    margin-top: 100px;
     margin-bottom: 3rem;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2rem;
@@ -1402,8 +1429,8 @@ section h2 {
     margin: 6rem auto;  /* Consistent vertical spacing */
     text-align: left;
     background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
-    backdrop-filter: blur(10px);           /* Blur effect */
-    -webkit-backdrop-filter: blur(10px);   /* For Safari */
+    backdrop-filter: blur(3px);           /* Blur effect */
+    -webkit-backdrop-filter: blur(3px);   /* For Safari */
     border-radius: 20px;                   /* Rounded corners */
     border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
     padding: 2.5rem;                       /* Generous padding */
@@ -1438,8 +1465,8 @@ section h2 {
     margin: 6rem auto;  /* Consistent vertical spacing */
     text-align: left;
     background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
-    backdrop-filter: blur(10px);           /* Blur effect */
-    -webkit-backdrop-filter: blur(10px);   /* For Safari */
+    backdrop-filter: blur(3px);           /* Blur effect */
+    -webkit-backdrop-filter: blur(3px);   /* For Safari */
     border-radius: 20px;                   /* Rounded corners */
     border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
     padding: 2.5rem;                       /* Generous padding */
@@ -1475,8 +1502,8 @@ section h2 {
     margin-bottom: 5rem;  /* Extra space at bottom before footer */
     text-align: left;
     background: rgba(255, 255, 255, 0.1);  /* Transparent white background */
-    backdrop-filter: blur(10px);           /* Blur effect */
-    -webkit-backdrop-filter: blur(10px);   /* For Safari */
+    backdrop-filter: blur(3px);           /* Blur effect */
+    -webkit-backdrop-filter: blur(3px);   /* For Safari */
     border-radius: 20px;                   /* Rounded corners */
     border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
     padding: 2.5rem;                       /* Generous padding */
