@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        async function loadBlog() {
+            const response = await fetch("blog.json");
+            const posts = await response.json();
+            document.getElementById("blog").innerHTML = posts.map(post => 
+                `<h2>${post.title}</h2><p>${post.body}</p>`
+            ).join("");
+        }
+        window.onload = loadBlog;
+    </script>
 </head>
 <body>
     <header class="main-header">
@@ -30,11 +40,13 @@
     </header>
 
     <main class="content">
-        <div class="coming-soon-block">
+        <!-- <div class="coming-soon-block">
             <div class="tagline">
                 <h2 class="glitch" data-glitch="Coming Soon...">Coming Soon...</h2>
             </div>
-        </div>
+        </div> -->
+        <h1>Latest Blog Posts</h1>
+        <div id="blog">Loading...</div>
     </main>
 
     <canvas id="particles-bg"></canvas>
