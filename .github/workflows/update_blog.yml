@@ -13,7 +13,7 @@ jobs:
 
       - name: Fetch latest blog posts from Sanity
         run: |
-          curl -s -o blog.json "https://your-project-id.api.sanity.io/v2023-01-01/data/query/production?query=*[_type=='post']"
+          curl -s -o blog.json "https://1k7mvxx4.api.sanity.io/v2023-01-01/data/query/production?query=*[_type=='post']"
 
       - name: Update blog.html
         run: |
