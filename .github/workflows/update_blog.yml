@@ -13,12 +13,12 @@ jobs:
 
       - name: Fetch latest blog posts from Sanity
         run: |
-          curl -s -o blog.json "https://1k7mvxx4.api.sanity.io/v2023-01-01/data/query/production?query=*[_type=='post']{title, body}"
+          curl -s "https://1k7mvxx4.api.sanity.io/v2021-10-21/data/query/production?query=*[_type=='post']" > blog-data.json
       
 
-      - name: Update blog.html
-        run: |
-          jq -r '[.result[] | {title: .title, body: .body} | "<h2>\(.title)</h2><p>\(.body)</p>"] | join("\n")' blog.json > blog.html
+      # - name: Update blog.html
+      #   run: |
+      #     jq -r '[.result[] | {title: .title, body: .body} | "<h2>\(.title)</h2><p>\(.body)</p>"] | join("\n")' blog.json > blog.html
         
 
       - name: Commit and Push Changes
