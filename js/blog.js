@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         blogContainer.innerHTML = posts.map(post => `
             <div class="blog-post">
                 <h2>${post.title}</h2>
-                ${post.imageUrl ? `<img src="${post.imageUrl}" alt="${post.title}">` : ""}
                 <p>${post.body}</p>
             </div>
         `).join("");
