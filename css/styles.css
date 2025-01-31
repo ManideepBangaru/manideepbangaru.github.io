@@ -478,13 +478,23 @@ body {
 .tech-stack-section,
 .experience-section {
     margin-bottom: 3rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);  /* Lighter white background */
     backdrop-filter: blur(3px) !important;
     -webkit-backdrop-filter: blur(3px) !important;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle white border */
     padding: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.146);  /* White-based shadow */
+}
+
+/* Adjust for dark mode */
+[data-theme="dark"] .profile-section,
+[data-theme="dark"] .about-section,
+[data-theme="dark"] .tech-stack-section,
+[data-theme="dark"] .experience-section {
+    background: rgba(255, 255, 255, 0.03);  /* Even lighter for dark mode */
+    border: 1px solid rgba(255, 255, 255, 0.05);  /* Subtle white border for dark mode */
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);  /* Softer white shadow for dark mode */
 }
 
 /* Keep specific margin for profile section */
@@ -503,7 +513,7 @@ body {
 
 /* Profile Section with Glassmorphism */
 .profile-section {
-    margin-top: 100px;
+    margin-top: 50spx;
     margin-bottom: 3rem;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
