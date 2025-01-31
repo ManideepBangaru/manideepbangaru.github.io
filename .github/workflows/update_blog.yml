@@ -14,15 +14,17 @@ jobs:
       - name: Fetch latest blog posts from Sanity
         run: |
           curl -s -o blog.json "https://1k7mvxx4.api.sanity.io/v2023-01-01/data/query/production?query=*[_type=='post']"
+      
 
       - name: Update blog.html
         run: |
-          jq -r '[.result[] | "<h2>\(.title)</h2><p>\(.body)</p>"] | join("\n")' blog.json > blog.html
+          jq -r '[.result[] | {title: .title, body: .body} | "<h2>\(.title)</h2><p>\(.body)</p>"] | join("\n")' blog.json > blog.html
+        
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "manideepbangaru"
-          git config --global user.email "bmd994@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
           git add blog.html
           git commit -m "Update blog.html with latest posts from Sanity" || exit 0
           git push
