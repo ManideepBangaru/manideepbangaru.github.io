@@ -21,8 +21,8 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config --global user.name "manideepbangaru"
+          git config --global user.email "bmd994@gmail.com"
           git add blog.html
           git commit -m "Update blog.html with latest posts from Sanity" || exit 0
           git push
