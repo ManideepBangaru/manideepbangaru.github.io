@@ -494,7 +494,7 @@ body {
 [data-theme="dark"] .experience-section {
     background: rgba(255, 255, 255, 0.03);  /* Even lighter for dark mode */
     border: 1px solid rgba(255, 255, 255, 0.05);  /* Subtle white border for dark mode */
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);  /* Softer white shadow for dark mode */
+    /* box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);  Softer white shadow for dark mode */
 }
 
 /* Keep specific margin for profile section */
@@ -520,7 +520,6 @@ body {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 /* Adjust for dark mode */
@@ -1444,7 +1443,7 @@ section h2 {
     border-radius: 20px;                   /* Rounded corners */
     border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
     padding: 2.5rem;                       /* Generous padding */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* Soft shadow */
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  Soft shadow */
     max-width: 1200px;                     /* Maximum width */
     position: relative;                    /* For stacking context */
 }
@@ -1480,7 +1479,7 @@ section h2 {
     border-radius: 20px;                   /* Rounded corners */
     border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
     padding: 2.5rem;                       /* Generous padding */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* Soft shadow */
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  Soft shadow */
     max-width: 1200px;                     /* Maximum width */
     position: relative;                    /* For stacking context */
 }
@@ -1517,7 +1516,7 @@ section h2 {
     border-radius: 20px;                   /* Rounded corners */
     border: 1px solid rgba(255, 255, 255, 0.2);  /* Subtle border */
     padding: 2.5rem;                       /* Generous padding */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* Soft shadow */
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  Soft shadow */
     max-width: 1200px;                     /* Maximum width */
     position: relative;                    /* For stacking context */
 }
