@@ -5,3 +5,5 @@ Updated to black and white theme
 Applied Glassmorphism effect to all the blocks
 
 Edited the whole website and removed blogs
+
+Trying to fix the blog page
