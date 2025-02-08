@@ -70,6 +70,7 @@ html, body {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    z-index: 100;
 }
 
 /* Footer styles without blur */
@@ -1556,17 +1557,70 @@ section h2 {
     background: var(--bg-secondary);
     padding: 20px;
     transform: translateX(-220px);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease; /* Changed to all for smooth blur transition */
     position: fixed;
-    top: 60px; /* Adjust based on your header height */
+    top: 100px;
     left: 0;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 160px);
     border-right: 1px solid var(--border-color);
-    z-index: 100;
+    z-index: 98;
+    font-family: 'Rajdhani', sans-serif;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 0.7; /* Reduce opacity when not active */
 }
 
 .filter-pane:hover {
     transform: translateX(0);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    opacity: 1; /* Full opacity when active */
+}
+
+/* Filter Content Styles */
+.filter-content {
+    transition: all 0.3s ease;
+    filter: blur(2px); /* Blur the content when not active */
+}
+
+.filter-pane:hover .filter-content {
+    filter: blur(0); /* Remove blur on hover */
+}
+
+/* Ensure toggle button stays clear */
+.filter-toggle {
+    opacity: 1;
+    filter: blur(0);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+/* Filter Toggle Button */
+.filter-toggle {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text);
+    background: var(--bg-secondary);
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid var(--border-color);
+    border-left: none;
+    transition: all 0.3s ease;
+    z-index: 99; /* Ensure toggle is above the pane but below header */
+}
+
+.filter-toggle i {
+    transform: rotate(-90deg); /* Point arrow down by default */
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when filter pane is hovered */
+.filter-pane:hover .filter-toggle i {
+    transform: rotate(90deg);
 }
 
 /* Main Content Area */
@@ -1893,4 +1947,70 @@ section h2 {
 .search-suggestions::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 3px;
+}
+
+/* Sort by Date Styles */
+.date-sort {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    padding-right: 30px; /* Space for custom arrow */
+}
+
+/* Custom dropdown arrow for dark theme */
+.date-sort {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .date-sort {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+[data-theme="dark"] .date-sort:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Light theme styles */
+[data-theme="light"] .date-sort {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+[data-theme="light"] .date-sort:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Focus styles for both themes */
+.date-sort:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.2);
+}
+
+/* Remove default arrow in IE */
+.date-sort::-ms-expand {
+    display: none;
+}
+
+/* Option styles for dropdown */
+.date-sort option {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 8px;
 }
