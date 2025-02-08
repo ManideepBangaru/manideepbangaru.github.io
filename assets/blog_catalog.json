@@ -1,0 +1,20 @@
+{
+    "blogs": [
+        {
+            "title": "Blog 1",
+            "description": "Description 1",
+            "date": "2021-01-01",
+            "tags":["Python","LLM"],
+            "status":"draft",
+            "source_url":"assets/blogs/blog1.md"
+        },
+        {
+            "title": "Blog 2",
+            "description": "Description 2",
+            "date": "2021-01-02",
+            "tags":["Python"],
+            "status":"published",
+            "source_url":"assets/blogs/blog2.md"
+        }
+    ]
+}
