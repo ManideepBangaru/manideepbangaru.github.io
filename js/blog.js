@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
             
             blogList.innerHTML = '';
-            console.log('Displaying blogs:', blogsToShow); // Debug log
+            console.log('Displaying blogs:', blogsToShow);
 
             if (blogsToShow.length === 0) {
                 blogList.innerHTML = '<p>No blogs found.</p>';
@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                     </div>
                 `;
 
-                // Add click event to navigate to the blog
+                // Add click event to navigate to the blog template
                 blogCard.addEventListener('click', () => {
-                    window.location.href = blog.source_url;
+                    window.location.href = `blog-template.html?post=${encodeURIComponent(blog.source_url)}`;
                 });
 
                 blogList.appendChild(blogCard);
