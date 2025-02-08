@@ -9,10 +9,13 @@
 
 .blog-post {
     background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 3rem;
     margin: 60px 0;  /* Space for header and footer */
     border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .blog-metadata {
@@ -48,6 +51,8 @@
     line-height: 1.8;
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
 }
 
 /* Markdown Content Styles */
@@ -139,7 +144,7 @@
     width: 100%;
     height: calc(100% - 120px);
     z-index: 0;
-    opacity: 0.3;
+    opacity: 0.4; /* Slightly reduce particle opacity */
 }
 
 /* Responsive adjustments */

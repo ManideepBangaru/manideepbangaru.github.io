@@ -97,8 +97,6 @@ footer {
     position: relative;
     z-index: 1;
     background: var(--content-bg);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 
 /* Container styles */
@@ -106,17 +104,9 @@ footer {
     background: transparent;
 }
 
-/* Remove any blur filters from all elements */
-* {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-}
-
 /* Remove any potential background colors or filters */
 .content * {
     background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
 }
 
 /* Add a Hulk-themed accent */
@@ -2006,4 +1996,9 @@ section h2 {
     color: var(--text);
     padding: 8px;
 }
+
+/* Add specific blur allowance for blog posts */
+.blog-post {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
 }
