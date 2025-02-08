@@ -30,9 +30,56 @@
     </header>
 
     <main class="content">
-        <div class="coming-soon-block">
-            <div class="tagline">
-                <h2 class="glitch" data-glitch="Coming Soon...">Coming Soon...</h2>
+        <div class="blog-container">
+            <!-- Left Filter Pane -->
+            <div class="filter-pane" id="filterPane">
+                <div class="filter-toggle" id="filterToggle">
+                    <i class="fas fa-filter"></i>
+                </div>
+                <div class="filter-content">
+                    <h3 class="filter-title">Apply Filters</h3>
+                    
+                    <!-- Sort Filter -->
+                    <div class="filter-section">
+                        <h4 class="sort-title">Sort by Date</h4>
+                        <select id="dateSort" class="date-sort">
+                            <option value="desc">Newest First</option>
+                            <option value="asc">Oldest First</option>
+                        </select>
+                    </div>
+
+                    <!-- Tags Filter -->
+                    <div class="filter-section">
+                        <h4>Tags</h4>
+                        <div id="tagsFilter" class="checkbox-group">
+                            <!-- Tags will be dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- Status Filter -->
+                    <div class="filter-section">
+                        <h4>Status</h4>
+                        <div id="statusFilter" class="checkbox-group">
+                            <label><input type="checkbox" value="published"> Published</label>
+                            <label><input type="checkbox" value="draft"> Draft</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="blog-content">                
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search blogs...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div id="searchSuggestions" class="search-suggestions"></div>
+                </div>
+
+                <div id="blogList" class="blog-grid">
+                    <!-- Blog entries will be dynamically populated -->
+                </div>
             </div>
         </div>
     </main>
@@ -46,5 +93,6 @@
     <script src="js/theme.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/glitch.js"></script>
+    <script src="js/blog.js"></script>
 </body>
 </html> 

@@ -70,6 +70,7 @@ html, body {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    z-index: 100;
 }
 
 /* Footer styles without blur */
@@ -96,8 +97,6 @@ footer {
     position: relative;
     z-index: 1;
     background: var(--content-bg);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
 }
 
 /* Container styles */
@@ -105,17 +104,9 @@ footer {
     background: transparent;
 }
 
-/* Remove any blur filters from all elements */
-* {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-}
-
 /* Remove any potential background colors or filters */
 .content * {
     background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
 }
 
 /* Add a Hulk-themed accent */
@@ -484,7 +475,7 @@ body {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle white border */
     padding: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.146);  /* White-based shadow */
+    box-shadow: 0 8px 32px 0 rgba(200, 229, 241, 0.498);  /* White-based shadow */
 }
 
 /* Adjust for dark mode */
@@ -494,7 +485,7 @@ body {
 [data-theme="dark"] .experience-section {
     background: rgba(255, 255, 255, 0.03);  /* Even lighter for dark mode */
     border: 1px solid rgba(255, 255, 255, 0.05);  /* Subtle white border for dark mode */
-    /* box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);  Softer white shadow for dark mode */
+    /* box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.05);  /*Softer white shadow for dark mode */
 }
 
 /* Keep specific margin for profile section */
@@ -1542,94 +1533,472 @@ section h2 {
     }
 }
 
+/* Blog Container Layout */
 .blog-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+    transition: all 0.3s ease;
 }
 
-.blog-post {
+/* Filter Pane Styles */
+.filter-pane {
+    width: 250px;
     background: var(--bg-secondary);
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transform: translateX(-220px);
+    transition: all 0.3s ease; /* Changed to all for smooth blur transition */
+    position: fixed;
+    top: 100px;
+    left: 0;
+    height: calc(100vh - 160px);
+    border-right: 1px solid var(--border-color);
+    z-index: 98;
+    font-family: 'Rajdhani', sans-serif;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 0.7; /* Reduce opacity when not active */
 }
 
-.blog-post h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
+.filter-pane:hover {
+    transform: translateX(0);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    opacity: 1; /* Full opacity when active */
 }
 
-.blog-post h2 {
-    font-size: 2rem;
-    margin: 2rem 0 1rem;
-    color: var(--text-primary);
+/* Filter Content Styles */
+.filter-content {
+    transition: all 0.3s ease;
+    filter: blur(2px); /* Blur the content when not active */
 }
 
-.blog-post h3 {
-    font-size: 1.5rem;
-    margin: 1.5rem 0 1rem;
-    color: var(--text-primary);
+.filter-pane:hover .filter-content {
+    filter: blur(0); /* Remove blur on hover */
 }
 
-.blog-post p {
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: var(--text-secondary);
+/* Ensure toggle button stays clear */
+.filter-toggle {
+    opacity: 1;
+    filter: blur(0);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
-.blog-post code {
-    background: var(--code-bg);
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-family: 'Courier New', Courier, monospace;
+/* Filter Toggle Button */
+.filter-toggle {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text);
+    background: var(--bg-secondary);
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid var(--border-color);
+    border-left: none;
+    transition: all 0.3s ease;
+    z-index: 99; /* Ensure toggle is above the pane but below header */
 }
 
-.blog-post pre {
-    background: var(--code-bg);
-    padding: 1rem;
+.filter-toggle i {
+    transform: rotate(-90deg); /* Point arrow down by default */
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when filter pane is hovered */
+.filter-pane:hover .filter-toggle i {
+    transform: rotate(90deg);
+}
+
+/* Main Content Area */
+.blog-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 50px;
+    width: calc(100% - 50px); /* Calculate width accounting for margin */
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+
+/* Search Container Styles */
+.search-container {
+    width: 100%;
+    max-width: 500px; /* Reduced max-width */
+    margin: 2rem auto;
+    position: relative;
+    transition: margin-left 0.3s ease;
+}
+
+/* Adjust content when filter pane is active */
+.filter-pane:hover + .blog-content {
+    margin-left: 270px;
+    width: calc(100% - 270px); /* Adjust width when filter is open */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-container {
+        max-width: 400px; /* Even smaller on mobile */
+    }
+    
+    .blog-content {
+        margin-left: 40px;
+        width: calc(100% - 40px);
+    }
+    
+    .filter-pane:hover + .blog-content {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+.filter-toggle {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.filter-content {
+    margin-top: 40px;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.checkbox-group label {
+    display: block;
+    margin: 5px 0;
+}
+
+.search-bar {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
-    overflow-x: auto;
-    margin: 1.5rem 0;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
 }
 
-.blog-post img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin: 1.5rem 0;
+.search-bar i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.blog-post blockquote {
-    border-left: 4px solid var(--accent-color);
-    padding-left: 1rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-    color: var(--text-secondary);
+.blog-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.blog-post ul, .blog-post ol {
-    margin: 1rem 0 1rem 2rem;
-    color: var(--text-secondary);
+/* Blog Card Styles */
+.blog-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.blog-post li {
-    margin-bottom: 0.5rem;
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.blog-post a {
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-.blog-post a:hover {
-    text-decoration: underline;
-}
-
-.error-message {
-    text-align: center;
-    padding: 2rem;
-    color: #ff6b6b;
+.blog-card h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text);
     font-size: 1.2rem;
+}
+
+.blog-description {
+    color: var(--text);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.date {
+    color: var(--text);
+    opacity: 0.7;
+}
+
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+}
+
+.status.published {
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+}
+
+.status.draft {
+    background: rgba(255, 165, 0, 0.1);
+    color: #ffa500;
+}
+
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Filter Pane Styles */
+.filter-section h4 {
+    color: var(--text);
+    margin-bottom: 0.75rem;
+}
+
+.checkbox-group label {
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* Search Bar Styles */
+.search-bar input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.search-bar i {
+    color: var(--text);
+    opacity: 0.7;
+}
+
+/* Blog Header Styles */
+.blog-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+}
+
+.blog-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.blog-header p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+/* Blog Grid Layout */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem; /* Increased gap between cards */
+    padding: 1rem;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Blog Card Styles */
+.blog-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: auto; /* Changed from 100% to auto */
+    min-width: 0;
+    min-height: 200px; /* Set minimum height */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.blog-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.blog-description {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.blog-meta {
+    margin-top: auto; /* Push meta section to bottom */
+    padding-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-left: 10px;
+    }
+}
+
+/* Search Suggestions Styles */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.suggestion-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hide scrollbar but keep functionality */
+.search-suggestions::-webkit-scrollbar {
+    width: 6px;
+}
+
+.search-suggestions::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+/* Sort by Date Styles */
+.date-sort {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    padding-right: 30px; /* Space for custom arrow */
+}
+
+/* Custom dropdown arrow for dark theme */
+.date-sort {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .date-sort {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+[data-theme="dark"] .date-sort:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Light theme styles */
+[data-theme="light"] .date-sort {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+[data-theme="light"] .date-sort:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Focus styles for both themes */
+.date-sort:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.2);
+}
+
+/* Remove default arrow in IE */
+.date-sort::-ms-expand {
+    display: none;
+}
+
+/* Option styles for dropdown */
+.date-sort option {
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 8px;
+}
+
+/* Add specific blur allowance for blog posts */
+.blog-post {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
 }
