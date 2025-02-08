@@ -1842,23 +1842,24 @@ section h2 {
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem; /* Increased gap between cards */
     padding: 1rem;
     margin-left: 20px;
-    transition: all 0.3s ease; /* Smooth transition for grid changes */
+    transition: all 0.3s ease;
 }
 
-/* Blog Card Refinements */
+/* Blog Card Styles */
 .blog-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
     border-radius: 15px;
     padding: 1.5rem;
-    transition: all 0.3s ease; /* Smooth transition for cards */
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    min-width: 0; /* Prevent cards from overflowing */
+    height: auto; /* Changed from 100% to auto */
+    min-width: 0;
+    min-height: 200px; /* Set minimum height */
 }
 
 .blog-card:hover {
@@ -1868,44 +1869,35 @@ section h2 {
 }
 
 .blog-card h3 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: var(--text);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    line-height: 1.4;
 }
 
 .blog-description {
-    font-family: 'Rajdhani', sans-serif;
-    color: var(--text);
-    opacity: 0.8;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
     flex-grow: 1;
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .blog-header h1 {
-        font-size: 2rem;
-    }
+.blog-meta {
+    margin-top: auto; /* Push meta section to bottom */
+    padding-top: 1rem;
+}
 
-    .blog-header p {
-        font-size: 1rem;
-    }
-
+/* Responsive adjustments */
+@media (max-width: 1200px) {
     .blog-grid {
-        margin-left: 10px;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Slightly smaller cards on mobile */
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
     }
 }
 
-@media (max-width: 480px) {
-    .blog-header h1 {
-        font-size: 1.8rem;
-    }
-
-    .blog-content {
-        padding: 1rem;
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-left: 10px;
     }
 }
 
@@ -2013,4 +2005,5 @@ section h2 {
     background-color: var(--bg);
     color: var(--text);
     padding: 8px;
+}
 }
