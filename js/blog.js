@@ -32,11 +32,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             const selectedTags = [...document.querySelectorAll('#tagsFilter input:checked')].map(cb => cb.value);
             const selectedStatuses = [...document.querySelectorAll('#statusFilter input:checked')].map(cb => cb.value);
 
+            console.log('Selected tags:', selectedTags); // Debug log
+
             let filteredBlogs = blogs.filter(blog => {
                 const matchesSearch = blog.title.toLowerCase().includes(searchTerm) || 
                                     blog.description.toLowerCase().includes(searchTerm);
+                
+                // Check if blog has ALL selected tags (AND operation)
                 const matchesTags = selectedTags.length === 0 || 
-                                  selectedTags.some(tag => blog.tags.includes(tag));
+                                  selectedTags.every(tag => blog.tags.includes(tag));
+                
                 const matchesStatus = selectedStatuses.length === 0 || 
                                     selectedStatuses.includes(blog.status);
                 
