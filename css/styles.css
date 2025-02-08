@@ -2002,3 +2002,150 @@ section h2 {
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
 }
+
+/* Enhanced Mobile Responsive Filter Pane */
+@media (max-width: 768px) {
+    /* Filter Pane Mobile Styles */
+    .filter-pane {
+        width: 200px;
+        transform: translateX(-180px);
+        top: 60px; /* Reduced top spacing */
+        height: calc(100vh - 120px);
+        z-index: 1001; /* Ensure it's above other content */
+    }
+
+    .filter-toggle {
+        width: 30px;
+        height: 30px;
+        right: -25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--bg-secondary);
+    }
+
+    /* Blog Content Area Mobile Styles */
+    .blog-content {
+        margin-left: 35px;
+        width: calc(100% - 35px);
+        padding: 10px;
+    }
+
+    /* Adjust when filter is open */
+    .filter-pane:hover {
+        transform: translateX(0);
+    }
+
+    .filter-pane:hover + .blog-content {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+    }
+
+    /* Blog Grid Mobile Adjustments */
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-left: 5px;
+        padding: 0.5rem;
+    }
+
+    /* Search Container Mobile Styles */
+    .search-container {
+        max-width: 100%;
+        margin: 1rem auto;
+    }
+
+    .search-bar input {
+        padding: 0.6rem 2rem 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Filter Content Mobile Styles */
+    .filter-content {
+        padding: 0.5rem;
+    }
+
+    .filter-section {
+        margin-bottom: 1rem;
+    }
+
+    .filter-section h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .checkbox-group label {
+        font-size: 0.85rem;
+        margin: 3px 0;
+    }
+
+    .date-sort {
+        font-size: 0.85rem;
+        padding: 0.4rem;
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 480px) {
+    .blog-card {
+        padding: 1rem;
+        min-height: 180px;
+    }
+
+    .blog-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .blog-description {
+        font-size: 0.9rem;
+    }
+
+    .blog-meta {
+        font-size: 0.8rem;
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    /* Improve touch targets */
+    .checkbox-group label {
+        padding: 8px 0;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* Adjust filter pane for better touch interaction */
+    .filter-pane {
+        width: 180px;
+        transform: translateX(-160px);
+    }
+
+    .filter-pane:hover + .blog-content {
+        margin-left: 190px;
+        width: calc(100% - 190px);
+    }
+}
+
+/* Touch-friendly styles */
+@media (hover: none) {
+    .filter-pane {
+        transition: transform 0.3s ease;
+    }
+
+    .filter-toggle {
+        padding: 12px;
+    }
+
+    .blog-card {
+        transition: transform 0.2s ease;
+    }
+
+    .blog-card:active {
+        transform: scale(0.98);
+    }
+}
