@@ -475,7 +475,7 @@ body {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);  /* Subtle white border */
     padding: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(200, 229, 241, 0.498);  /* White-based shadow */
+    box-shadow: 0 8px 32px 0 rgba(200, 229, 241, 0.249);  /* White-based shadow */
 }
 
 /* Adjust for dark mode */
