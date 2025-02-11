@@ -40,16 +40,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch(blogUrl);
         const markdown = await response.text();
 
-        // Configure marked options
+        // Configure marked with syntax highlighting
         marked.setOptions({
             highlight: function(code, lang) {
                 if (lang && hljs.getLanguage(lang)) {
                     return hljs.highlight(code, { language: lang }).value;
                 }
                 return hljs.highlightAuto(code).value;
-            },
-            breaks: true,
-            gfm: true
+            }
         });
 
         // Render markdown
@@ -59,6 +57,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Initialize syntax highlighting
         document.querySelectorAll('pre code').forEach((block) => {
             hljs.highlightBlock(block);
+        });
+
+        // Add this after your markdown rendering setup
+        marked.use({
+            renderer: {
+                code(code, language) {
+                    const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+                    const highlightedCode = hljs.highlight(code, { language: validLanguage }).value;
+                    return `<pre><code class="hljs language-${validLanguage}" data-theme-light data-theme-dark>${highlightedCode}</code></pre>`;
+                }
+            }
         });
 
     } catch (error) {
