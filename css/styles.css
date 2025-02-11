@@ -50,6 +50,8 @@ html, body {
     min-height: 100vh;
     overflow-x: hidden;  /* Prevent horizontal scroll */
     overflow-y: auto;    /* Allow vertical scroll */
+    font-family: 'Merriweather', serif;
+    line-height: 1.6;
 }
 
 /* Main Content Styles */
