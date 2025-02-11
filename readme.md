@@ -9,3 +9,5 @@ Edited the whole website and removed blogs
 Trying to fix the blog page using JSON structures
 
 facing problem with CMS system
+
+Updated blog page with Python introduction
