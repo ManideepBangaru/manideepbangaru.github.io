@@ -11,3 +11,5 @@ Trying to fix the blog page using JSON structures
 facing problem with CMS system
 
 Updated blog page with Python introduction
+
+set up everything !
