@@ -30,9 +30,64 @@
     </header>
 
     <main class="content">
-        <div class="coming-soon-block">
-            <div class="tagline">
-                <h2 class="glitch" data-glitch="Coming Soon...">Coming Soon...</h2>
+        <div class="library-container">
+            <div class="library-grid">
+                <div class="fitness-card" id="fitnessCard">
+                    <div class="fitness-card-background">
+                        <div class="fitness-icons">
+                            <i class="fas fa-dumbbell"></i>
+                            <i class="fas fa-running"></i>
+                            <i class="fas fa-heart-pulse"></i>
+                            <i class="fas fa-fire"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="fitness-card-content">
+                        <div class="fitness-header">
+                            <div class="fitness-icon-main">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h2>Fitness Journey</h2>
+                            <p>My workout videos & progress</p>
+                        </div>
+                        
+                        <div class="fitness-stats">
+                            <div class="stat-item">
+                                <div class="stat-number" id="streakCount">45</div>
+                                <div class="stat-label">Day Streak</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="workoutCount">120</div>
+                                <div class="stat-label">Videos</div>
+                            </div>
+                        </div>
+                        
+                        <div class="fitness-cta">
+                            <span>Click to watch videos</span>
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="fitness-pulse"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Simplified Fitness Modal -->
+        <div id="fitnessModal" class="fitness-modal">
+            <div class="fitness-modal-content">
+                <div class="fitness-modal-header">
+                    <h2>Fitness Videos</h2>
+                    <button class="close-modal" id="closeModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="fitness-modal-body">
+                    <div class="video-grid" id="videoGrid">
+                        <!-- Videos will be loaded here -->
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -46,5 +101,6 @@
     <script src="js/theme.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/glitch.js"></script>
+    <script src="js/fitness.js"></script>
 </body>
 </html> 

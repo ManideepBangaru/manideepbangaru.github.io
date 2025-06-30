@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Videos - Manideep Bangaru</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html"><h2>Manideep Bangaru</h2></a>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://github.com/ManideepBangaru" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/manideepbangaru/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="library.html">Library</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="fitness-videos-container">
+            <div class="fitness-videos-header">
+                <div class="back-button-wrapper">
+                    <a href="library.html" class="back-button-simple">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <div class="page-title">
+                    <h1>My Fit Streak</h1>
+                </div>
+                <div class="fitness-stats-header">
+                    <div class="stat-item">
+                        <div class="stat-number" id="streakCount">45</div>
+                        <div class="stat-label">Day Streak</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="workoutCount">120</div>
+                        <div class="stat-label">Videos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-grid" id="videoGrid">
+                <!-- Videos will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <canvas id="particles-bg"></canvas>
+
+    <footer>
+        <p>© 2025 Manideep Bangaru. All rights reserved.</p>
+    </footer>
+    
+    <script src="js/theme.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/fitness-videos.js"></script>
+</body>
+</html> 

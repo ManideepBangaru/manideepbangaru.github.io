@@ -1,0 +1,35 @@
+{
+  "fitnessJourney": {
+    "title": "My Fitness Journey",
+    "videos": [
+      {
+        "id": 1,
+        "title": "Day 1 - Starting Strong",
+        "date": "2024-01-01",
+        "duration": "45 seconds",
+        "videoUrl": "https://www.youtube.com/shorts/Ul6s7GX2F6Q",
+        "description": "First day of my fitness journey - full body workout"
+      },
+      {
+        "id": 2,
+        "title": "Week 1 Progress Check",
+        "date": "2024-01-07",
+        "duration": "30 seconds",
+        "videoUrl": "https://www.youtube.com/shorts/EXAMPLE_ID_2",
+        "description": "First week completed - checking progress"
+      },
+      {
+        "id": 3,
+        "title": "Month 1 Transformation",
+        "date": "2024-02-01",
+        "duration": "60 seconds",
+        "videoUrl": "https://www.youtube.com/shorts/EXAMPLE_ID_3",
+        "description": "One month progress - visible improvements"
+      }
+    ],
+    "stats": {
+      "currentStreak": 45,
+      "totalWorkouts": 120
+    }
+  }
+} 
