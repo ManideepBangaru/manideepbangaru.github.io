@@ -17,11 +17,19 @@
         "duration": "14 seconds",
         "videoUrl": "https://www.youtube.com/shorts/Ul6s7GX2F6Q",
         "description": "Second day of my fitness journey - Chest, Shoulders & Triceps"
+      },
+      {
+        "id": 3,
+        "title": "Day 3 - Starting Strong",
+        "date": "2025-05-20",
+        "duration": "14 seconds",
+        "videoUrl": "https://www.youtube.com/shorts/Ul6s7GX2F6Q",
+        "description": "third day of my fitness journey - Chest, Shoulders & Triceps"
       }
     ],
     "stats": {
-      "currentStreak": 2,
-      "totalWorkouts": 2
+      "currentStreak": 3,
+      "totalWorkouts": 3
     }
   }
 } 
