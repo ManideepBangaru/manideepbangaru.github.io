@@ -7,6 +7,15 @@
             "tags":["Python"],
             "status":"Published",
             "source_url":"assets/blogs/python-introduction.md"
+        },
+        {
+            "title": "Python - Introduction - Part 2",
+            "description": "A Brief Introduction to Python and its features",
+            "date": "2021-02-11",
+            "tags":["Python"],
+            "status":"Published",
+            "source_url":"assets/blogs/python-introduction.md"
         }
+
     ]
 }
